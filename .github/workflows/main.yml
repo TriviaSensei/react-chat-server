@@ -18,14 +18,14 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Generate deployment package
-        run: zip -r jplay.zip .
+        run: zip -r rc_server.zip .
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: jplay
-          environment_name: Jplay-env
+          application_name: react-chat-server
+          environment_name: React-chat-server-env
           version_label: ${{ github.sha }}
           region: us-east-1
-          deployment_package: jplay.zip
+          deployment_package: rc_server.zip
