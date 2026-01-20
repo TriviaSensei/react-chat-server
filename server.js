@@ -16,7 +16,7 @@ app.get('/api', (req, res) => {
 	res.status(200).json({
 		status: 'OK',
 		data: {
-			message: 'Hello from AWS!',
+			message: 'Hello from AWS, on 01/20/2026!',
 		},
 	});
 });
